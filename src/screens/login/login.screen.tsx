@@ -1,10 +1,11 @@
-import React, {useCallback, useEffect} from 'react';
+import * as React from 'react';
+import {useCallback, useEffect} from 'react';
 import {View, Text, ScrollView, Image} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 
-import {useDispatch, useSelector, RootState} from '@src/store';
+import {useDispatch, useSelector} from '@src/store';
 import {Button, TextInput, VStack} from '@src/commons';
 import {useAuth} from '@src/auth';
 
@@ -21,9 +22,7 @@ interface LoginProps extends NativeStackScreenProps<any> {}
 const Login = ({}: LoginProps) => {
   const {logIn} = useAuth();
   const dispatch = useDispatch();
-  const {loading, success, data} = useSelector(
-    (state: RootState) => state.login,
-  );
+  const {loading, success, data} = useSelector((state) => state.login);
 
   const onSubmit = useCallback(
     (values: LoginData) => {
@@ -46,7 +45,8 @@ const Login = ({}: LoginProps) => {
           email: Yup.string().email().required('Email address required'),
           password: Yup.string().required('Password required'),
         })}
-        onSubmit={onSubmit}>
+        onSubmit={onSubmit}
+      >
         {({handleChange, handleSubmit, values, errors, touched}) => (
           <VStack style={styles.login}>
             <View style={styles.right}>

@@ -3,11 +3,16 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import {showToastForError} from '@src/helpers';
 
 import {loginService} from './login.service';
-import type {LoginRequest, LoginResponse} from './login.service';
 
 const login = createAsyncThunk(
   'login/user',
-  async (user: LoginRequest, thunkAPI) => {
+  async (
+    user: {
+      email: string;
+      password: string;
+    },
+    thunkAPI,
+  ) => {
     try {
       return await loginService.login(user);
     } catch (error) {
@@ -19,7 +24,7 @@ const login = createAsyncThunk(
 
 const initialState: {
   loading: boolean;
-  data?: LoginResponse | null;
+  data?: Api.Login | null;
   success: boolean;
 } = {
   loading: false,
@@ -31,13 +36,13 @@ const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-    logout: state => {
+    logout: (state) => {
       state.data = null;
       state.success = false;
     },
   },
-  extraReducers: builder => {
-    builder.addCase(login.pending, state => {
+  extraReducers: (builder) => {
+    builder.addCase(login.pending, (state) => {
       state.loading = true;
     });
     builder.addCase(login.fulfilled, (state, action) => {
@@ -45,7 +50,7 @@ const loginSlice = createSlice({
       state.data = action.payload;
       state.success = true;
     });
-    builder.addCase(login.rejected, state => {
+    builder.addCase(login.rejected, (state) => {
       state.loading = false;
     });
   },

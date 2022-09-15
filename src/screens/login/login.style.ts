@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-import {colors, fonts} from '@src/modules';
+import Theme from '@src/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   help: {
-    backgroundColor: colors.light.primary100,
+    backgroundColor: Theme.colors.$primary,
     paddingVertical: 4,
     paddingHorizontal: 8,
     borderRadius: 4,
@@ -43,11 +43,11 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   forgetpassowrdtext: {
-    color: colors.light.primaryColor,
+    color: Theme.colors.$primary,
   },
   loginbutton: {
-    backgroundColor: colors.light.primaryColor,
-    fontSize: fonts.size.large,
+    backgroundColor: Theme.colors.$primary,
+    fontSize: Theme.fontSizes.$2,
   },
   donthaveaccountcontainer: {
     flexDirection: 'column',
@@ -58,11 +58,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   signuptext: {
-    color: colors.light.primaryColor,
+    color: Theme.colors.$primary,
     marginLeft: 5,
   },
   version: {
-    color: colors.light.grey200,
+    color: Theme.colors.$gray200,
     marginTop: 20,
   },
 });

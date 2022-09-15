@@ -1,2 +1,2 @@
 export * from './reducers.store';
-export * from './useDispatch';
+export * from './hooks.store';

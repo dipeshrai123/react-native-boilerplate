@@ -2,36 +2,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {api} from '@src/api';
 
-type LoginRequest = {
-  email: string;
-  password: string;
-};
-
-type LoginResponse = {
-  success: true;
-  data: {
-    type: string;
-    message: string;
-    data: {
-      user: {
-        id: number;
-        created_at: string;
-        updated_at: string;
-        firstname: string;
-        lastname: string;
-        email: string;
-        password: string;
-        role: string;
-        verified: boolean;
-      };
-      token: string;
-    };
-  };
-};
-
 //Mark - login
-const login = async (data: LoginRequest) => {
-  const response = await api.post<LoginResponse>('/api/auth/login', data);
+const login = async (data: {email: string; password: string}) => {
+  const response = await api.post('auth/login', undefined, data);
 
   if (response.data.success) {
     try {
@@ -49,4 +22,3 @@ const loginService = {
 };
 
 export {loginService};
-export type {LoginRequest, LoginResponse};
