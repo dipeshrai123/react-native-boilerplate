@@ -39,7 +39,7 @@ export const Button = ({
         style,
         {
           backgroundColor:
-            disabled || loading ? Theme.colors.$primary : Theme.colors.$gray300,
+            disabled || loading ? Theme.colors.$gray300 : Theme.colors.$primary,
         },
       ]}
       onPress={onPress}

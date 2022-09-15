@@ -49,17 +49,11 @@ const Login = ({}: LoginProps) => {
       >
         {({handleChange, handleSubmit, values, errors, touched}) => (
           <VStack style={styles.login}>
-            <View style={styles.right}>
-              <View style={styles.help}>
-                <Text style={styles.helptext}>Help</Text>
-              </View>
-            </View>
-
             <View style={styles.logoContainer}>
               <View style={styles.logo}>
                 <Image
                   source={{
-                    uri: 'http://143.110.243.194:3002/static/media/logo.c645f5dd901bf861b042.png',
+                    uri: 'https://codniv.com/assets/images/Codniv_Logo.png',
                   }}
                   style={styles.logoImage}
                 />
