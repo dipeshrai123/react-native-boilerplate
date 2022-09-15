@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-import {colors, spacing} from '@src/modules';
+import Theme from '@src/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,16 +13,16 @@ const styles = StyleSheet.create({
   topheader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: spacing.card.PADDING,
-    backgroundColor: colors.light.primaryColor,
-    color: colors.light.white,
+    padding: Theme.space.$3,
+    backgroundColor: Theme.colors.$primary,
+    color: '#ffffff',
   },
   whitetext: {
-    color: colors.light.white,
+    color: '#ffffff',
   },
   body: {
     flexDirection: 'column',
-    padding: spacing.screen.PADDING,
+    padding: Theme.space.$3,
     // padding: spacing.card.PADDING,
     // borderColor: colors.light.grey200,
     // borderWidth: 1,
@@ -33,9 +33,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   pin: {
-    borderColor: colors.light.grey200,
+    borderColor: Theme.colors.$gray300,
     borderWidth: 1,
-    padding: spacing.default.PADDING,
+    padding: Theme.space.$3,
     borderRadius: 8,
   },
 });

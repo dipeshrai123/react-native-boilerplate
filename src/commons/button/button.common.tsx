@@ -9,7 +9,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 
-import {colors} from '@src/modules';
+import Theme from '@src/theme';
 
 import {styles} from './button.style';
 
@@ -39,14 +39,13 @@ export const Button = ({
         style,
         {
           backgroundColor:
-            disabled || loading
-              ? colors.light.disabledPrimaryColor
-              : colors.light.primaryColor,
+            disabled || loading ? Theme.colors.$primary : Theme.colors.$gray300,
         },
       ]}
       onPress={onPress}
       disabled={disabled || loading}
-      activeOpacity={0.8}>
+      activeOpacity={0.8}
+    >
       {loading ? (
         <ActivityIndicator size="small" color="white" />
       ) : (

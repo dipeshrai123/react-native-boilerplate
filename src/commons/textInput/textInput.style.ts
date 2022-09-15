@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-import {colors, fonts} from '@src/modules';
+import Theme from '@src/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderRadius: 8,
     overflow: 'hidden',
-    borderColor: colors.light.grey300,
+    borderColor: Theme.colors.$gray300,
     backgroundColor: 'white',
     borderWidth: 1,
     width: '100%',
@@ -25,9 +25,9 @@ const styles = StyleSheet.create({
   },
   input: {
     paddingLeft: 0,
-    fontSize: fonts.size.medium,
+    fontSize: Theme.fontSizes.$2,
     overflow: 'hidden',
-    color: colors.light.textColor,
+    color: Theme.colors.$black,
   },
   rightIcon: {
     position: 'absolute',
@@ -36,13 +36,13 @@ const styles = StyleSheet.create({
     top: -15,
   },
   errorStyle: {
-    borderColor: colors.light.red,
+    borderColor: Theme.colors.$error,
   },
   errorWrapper: {
     marginTop: 4,
   },
   errorText: {
-    color: colors.light.red,
+    color: Theme.colors.$error,
   },
 });
 

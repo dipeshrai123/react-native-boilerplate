@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {useAuth} from '@src/auth';
@@ -26,7 +26,11 @@ const AuthRoute = () => {
       ) : (
         <AuthStack.Screen
           name="AuthDrawer"
-          component={() => <View>Logged In</View>}
+          component={() => (
+            <View>
+              <Text>Logged In</Text>
+            </View>
+          )}
         />
       )}
     </AuthStack.Navigator>

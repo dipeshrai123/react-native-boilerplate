@@ -1,10 +1,10 @@
 import {StyleSheet} from 'react-native';
 
-import {colors} from '@src/modules';
+import Theme from '@src/theme';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.light.grey300,
+    backgroundColor: Theme.colors.$gray200,
   },
 });
 

@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-import {colors, fonts, spacing} from '@src/modules';
+import Theme from '@src/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,11 +9,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.light.black,
+    backgroundColor: Theme.colors.$black,
     paddingVertical: 16,
     paddingHorizontal: 10,
     height: 48,
-    borderRadius: spacing.button.BORDER_RADIUS,
+    borderRadius: Theme.radius.$default,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -25,9 +25,8 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   text: {
-    fontSize: fonts.size.medium,
-    fontFamily: fonts.family.ROBOTO_MEDIUM,
-    color: colors.light.cardColor,
+    fontSize: Theme.fontSizes.$3,
+    color: Theme.colors.$black,
     textAlign: 'center',
   },
 });

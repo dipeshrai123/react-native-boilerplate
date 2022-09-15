@@ -21,7 +21,8 @@ const CustomModal = ({children, displayElement}: CustomModalProps) => {
         <Pressable
           onPress={() => {
             setModalVisible(true);
-          }}>
+          }}
+        >
           {displayElement}
         </Pressable>
       </View>
@@ -30,7 +31,8 @@ const CustomModal = ({children, displayElement}: CustomModalProps) => {
         animationType="slide"
         transparent={true}
         visible={modalVisible}
-        onRequestClose={() => setModalVisible(false)}>
+        onRequestClose={() => setModalVisible(false)}
+      >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             {children({onCloseModalHandler})}
