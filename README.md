@@ -22,6 +22,7 @@ npm install
 ```
 
 ## Run
+
 After the installation you can run the project by:
 
 ```bash
@@ -32,60 +33,12 @@ npm run android
 npm run ios
 ```
 
-## Components
+## Reseting Cache
 
-### VStack
+`.env` files are cached and when changing the `.env` file variables it wouldn't update. We have to run the script to reset the chache.
 
-It can be imported from `@src/commons`. It is used to stack the childrens vertically with default gap in between the childrens.
-
-Usage:
-
-```tsx
-<VStack>
-  <View>
-    <Text>Child One</Text>
-  </View>
-
-  <View>
-    <Text>Child Two</Text>
-  </View>
-</VStack>
-```
-
-You can specify the gap size by passing `gap={number}` prop in `VStack` component.
-
-### HStack
-
-It can be imported from `@src/commons`. It is used to stack the childrens horizontally with default gap in between the childrens.
-
-Usage:
-
-```tsx
-<HStack>
-  <View>
-    <Text>Child One</Text>
-  </View>
-
-  <View>
-    <Text>Child Two</Text>
-  </View>
-</HStack>
-```
-
-You can specify the gap size by passing `gap={number}` prop in `HStack` component.
-
-And if we want one child to occupy the available space then we can style the child with `flex: 1`.
-
-```tsx
-<HStack>
-  <View style={{flex: 1}}>
-    <Text>Child One</Text>
-  </View>
-
-  <View>
-    <Text>Child Two</Text>
-  </View>
-</HStack>
+```bash
+npm start -- --reset-cache
 ```
 
 ## Contributions
