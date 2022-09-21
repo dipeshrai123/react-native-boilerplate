@@ -4,7 +4,7 @@ import {api} from '@src/api';
 
 //Mark - login
 const login = async (data: {email: string; password: string}) => {
-  const response = await api.post('auth/login', undefined, data);
+  const response = await api<Api.Login>('post')('auth/login', undefined, data);
 
   if (response.data.success) {
     try {
